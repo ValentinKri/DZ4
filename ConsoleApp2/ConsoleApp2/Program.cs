@@ -122,6 +122,7 @@ namespace ConsoleApp2
 
                     }
                     Console.WriteLine(score);
+                    Console.WriteLine("Таблица лидеров");
                     try
                     {
                         using (var fs = new StreamWriter(new FileStream("Leader.txt", FileMode.Append)))
@@ -142,7 +143,7 @@ namespace ConsoleApp2
                             string line1;
                             while ((line1 = fr.ReadLine()) != null)
                             {
-                                Console.WriteLine(s);
+                                Console.WriteLine(line1);
                             }
                         }
                     }
