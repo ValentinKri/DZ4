@@ -28,22 +28,23 @@ namespace ConsoleApp2
                 A4 = a4;
             }
         }
-        int Check(int a)
-        {
-            if (a > 0 && a < 5)
-            {
-                return a;
-            }
-            else
-            {
-                Console.WriteLine("Число должно быть от 1-4, введите другое число");
-                int ans = int.Parse(Console.ReadLine());
-                return Check(ans);
-            }
-        }
+        
 
         static void Main(string[] args)
         {
+            int Check(int a)
+            {
+                if (a > 0 && a < 5)
+                {
+                    return a;
+                }
+                else
+                {
+                    Console.WriteLine("Число должно быть от 1-4, введите другое число");
+                    int ans = int.Parse(Console.ReadLine());
+                    return Check(ans);
+                }
+            }
             int i = 0;
             string s;
             string name;
@@ -76,6 +77,7 @@ namespace ConsoleApp2
                         Console.WriteLine("4: " + Regex.Replace(questions[j].A4, @"(=>False|=>True)", ""));
                         Console.WriteLine("Введите номер вашего ответа");
                         int ans = int.Parse(Console.ReadLine());
+                        Check(ans);
                         switch (ans)
                         {
                             case 1:
@@ -114,7 +116,6 @@ namespace ConsoleApp2
                                 else
                                     Console.WriteLine("Ответ неправильный");
                                 break;
-
 
                         }
                         
